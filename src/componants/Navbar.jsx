@@ -39,9 +39,9 @@ export default function Navbar() {
               </div>
             </div>
             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-              <NavLink href="#" className="">
-                Login
-              </NavLink>
+                  <NavLink href="#" myClass="hidden sm:block">
+                    Login
+                  </NavLink>
               <a
                 href="#"
                 className="text-sm ml-4 bg-btn text-white font-bold py-3 px-4 rounded inline-flex items-center"
@@ -53,7 +53,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Mobile menu NavLink*/}
+        {/* Mobile menu NavLink */}
         <div
           className={`${isMenuOpen ? "block" : "hidden"} sm:hidden`}
           id="mobile-menu"
@@ -63,6 +63,7 @@ export default function Navbar() {
             <MobileNavLink href="#">Product</MobileNavLink>
             <MobileNavLink href="#">Pricing</MobileNavLink>
             <MobileNavLink href="#">Contact</MobileNavLink>
+            <MobileNavLink href="#">Login</MobileNavLink>
           </div>
         </div>
       </nav>

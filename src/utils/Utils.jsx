@@ -8,11 +8,11 @@ export const Brand = ({ children }) => {
     </a>
   );
 };
-export const NavLink = ({ href, children }) => {
+export const NavLink = ({ href, children, myClass }) => {
   return (
     <a
       href={href}
-      className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+      className={`${myClass} text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium`}
     >
       {children}
     </a>
@@ -187,3 +187,29 @@ export const ExpertCard = ({
     </div>
   );
 };
+
+// Footer
+export function FooterSection({ title, children }) {
+  return (
+    <div>
+      <h3 className="text-lg font-bold mb-4">{title}</h3>
+      {children}
+    </div>
+  );
+}
+export function FooterLink({ href, children }) {
+  return (
+    <li>
+      <a href={href} className="text-gray-400 hover:text-white">
+        {children}
+      </a>
+    </li>
+  );
+}
+export function SocialIcon({ href, icon: Icon }) {
+  return (
+    <a href={href} className="text-blue-500">
+      <Icon size={24} />
+    </a>
+  );
+}

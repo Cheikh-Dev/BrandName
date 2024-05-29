@@ -24,7 +24,7 @@ export default function SectionExpert() {
             imgSrc={expert1}
             star={FaStar}
             description="Slate helps you see how many more days you need to work to reach your financial goal for the month and year."
-            rating={4}
+            rating={5}
             name="Regina Miles"
             title="Designer"
           />
