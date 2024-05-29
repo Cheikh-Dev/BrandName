@@ -154,3 +154,36 @@ export const Cards = ({
     </div>
   );
 };
+
+// SectionExpert
+export const ExpertCard = ({
+  imgSrc,
+  description,
+  rating,
+  name,
+  title,
+  star: Star,
+}) => {
+  return (
+    <div className="text-center px-28">
+      <img
+        src={imgSrc}
+        alt={name}
+        className="mx-auto w-128 h-128 rounded-full mb-4"
+      />
+      <p className="text-gray-400 font-semibold text-sm mb-4">{description}</p>
+      <div className="flex justify-center items-center mb-4">
+        {[...Array(5)].map((_, index) => (
+          <Star
+            key={index}
+            className={`w-5 h-5 ${
+              index < rating ? "text-yellow-500" : "text-gray-300"
+            }`}
+          />
+        ))}
+      </div>
+      <h3 className="text-lg font-semibold">{name}</h3>
+      <p className="text-gray-500">{title}</p>
+    </div>
+  );
+};
