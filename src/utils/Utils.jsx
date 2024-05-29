@@ -54,13 +54,11 @@ export const Card = ({ imgSrc, imgAlt, title, content, myClass }) => {
         />
       </div>
       <h1 className="text-[16px] font-bold py-3">{title}</h1>
-      <div className="w-[20%] h-[1%] bg-red-500">.</div>
+      <div className="w-[20%] h-[1%] bg-red-500">{""}</div>
       <p className="pt-6 text-sm">{content}</p>
     </div>
   );
 };
-
-// Section 1
 
 // Section 2
 export const Cards = ({
