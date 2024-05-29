@@ -64,6 +64,7 @@ export const Card = ({ imgSrc, imgAlt, title, content, myClass }) => {
 export const Cards = ({
   imgSrc,
   sale,
+  isNew,
   language,
   rating,
   title,
@@ -72,56 +73,82 @@ export const Cards = ({
   duration,
   price,
   discountedPrice,
+  stick1,
+  stick2,
+  stick3,
+  start,
+  down,
+  flesh,
+  pro,
+  les,
+  hr
 }) => {
   return (
-    <div className="w-full max-w-sm mx-4 my-4 bg-white shadow-lg rounded-lg overflow-hidden">
+    <div className="w-full max-w-sm mx-4 my-4 bg-white shadow-lg overflow-hidden">
       <div className="relative">
         <img
-          className="w-full h-48 object-cover object-center"
+          className="w-full h-80 object-cover object-center"
           src={imgSrc}
           alt={title}
         />
         {sale && (
-          <span className="absolute top-0 left-0 bg-red-500 text-white text-xs px-2 py-1">
+          <span className="absolute top-5 left-5 rounded-sm bg-red-500 text-white text-xs px-3 py-1">
             Sale
+          </span>
+        )}
+        {isNew && (
+          <span className="absolute flex space-x-2 justify-center bottom-10 w-full rounded-sm bg-transparen text-white text-xs px-3 py-3 rounded-sm">
+            <img
+              src={stick1}
+              alt="like"
+              className="rounded-full w-[40px] h-[40px] m-1"
+            />
+            <img
+              src={stick2}
+              alt="basket"
+              className="rounded-full w-[40px] h-[40px] m-1"
+            />
+            <img
+              src={stick3}
+              alt="eye"
+              className="rounded-full w-[40px] h-[40px] m-1"
+            />
           </span>
         )}
       </div>
       <div className="p-4">
         <div className="flex items-center mb-2">
-          <span className="text-blue-500 text-xs uppercase font-semibold">
-            {language}
-          </span>
-          <div className="ml-auto flex items-center">
+          <span className="text-btn text-sm font-bold">{language}</span>
+          <div className="ml-auto flex items-center bg-gray-900 p-2 rounded-full">
             <span className="text-yellow-500 text-xs mr-1">{rating}</span>
-            <svg
-              className="w-4 h-4 text-yellow-500"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path d="M9.049 2.927C9.285 2.36 9.714 2 10.201 2s.917.36 1.152.927l1.26 3.038 3.356.316c.702.066 1.025.9.587 1.474l-2.547 2.98.848 3.327c.19.745-.34 1.44-1.09 1.44-.319 0-.63-.099-.893-.282L10 13.586l-2.874 1.624c-.262.183-.574.282-.893.282-.751 0-1.281-.696-1.09-1.44l.848-3.327-2.547-2.98c-.438-.574-.115-1.408.587-1.474l3.356-.316 1.26-3.038z"></path>
-            </svg>
+            <span className="text-yellow-500">{start}</span>
           </div>
         </div>
-        <h2 className="text-gray-800 text-lg font-semibold">{title}</h2>
-        <p className="text-gray-600 text-sm mt-1">{description}</p>
+        <h2 className="text-gray-800 text-md font-bold">{title}</h2>
+        <p className="text-gray-400 font-bold text-sm mt-1">{description}</p>
         <div className="flex items-center mt-4">
-          <span className="text-gray-800 text-xs mr-1">{lessons} Lessons</span>
-          <span className="text-gray-800 text-xs mx-1">&bull;</span>
-          <span className="text-gray-800 text-xs">{duration}</span>
+          <p className="flex space-x-2 items-center text-gray-500 text-xs mr-1">
+            <span className="font-light">{down}</span>
+            <span className="font-bold text-sm">{lessons}</span>
+            <span className="font-bold text-sm"> Sales</span>
+          </p>
         </div>
         <div className="flex items-center mt-4">
-          <span className="text-gray-600 text-xs line-through mr-1">
-            ${price}
-          </span>
+          <span className="text-gray-400 text-sm mr-1">${price}</span>
           <span className="text-green-500 text-lg font-bold">
             ${discountedPrice}
           </span>
         </div>
       </div>
-      <div className="p-4 flex items-center justify-center">
-        <button className="bg-blue-500 text-white text-sm px-4 py-2 rounded-full hover:bg-blue-600 transition">
+      <div className="flex items-center space-x-3 mx-4 text-xs text-gray-500">
+        <span className="flex items-center gap-1">{pro}Pro...</span>
+        <span className="flex items-center gap-1">{les}64 Les..</span>
+        <span className="flex items-center gap-1">{hr}22hr...</span>
+      </div>
+      <div className="p-4 flex items-center justify-start">
+        <button className="flex items-center font-bold bg-w text-btn border border-btn text-sm px-5 py-3 rounded-full hover:bg-btn hover:text-w transition">
           Learn More
+          {flesh}
         </button>
       </div>
     </div>
